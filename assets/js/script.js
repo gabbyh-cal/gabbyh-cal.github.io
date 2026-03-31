@@ -10,7 +10,7 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
 fetch(window.STATIONS_URL)
   .then(response => response.json())
   .then(data => {
-    L.geoJSON(data, {
+    const layer = L.geoJSON(data, {
       pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, {
           radius: 2+ Math.sqrt(feature.properties.combined_count) / 5,
@@ -27,5 +27,6 @@ fetch(window.STATIONS_URL)
         `);
       }
     }).addTo(map);
+    map.fitBounds(layer.getBounds());
   })
   .catch(error => console.error("Error loading GeoJSON:", error));
