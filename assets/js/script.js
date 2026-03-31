@@ -13,7 +13,7 @@ fetch(window.STATIONS_URL)
     L.geoJSON(data, {
       pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, {
-          radius: Math.sqrt(feature.properties.combined_count) / 2,
+          radius: 2+ Math.sqrt(feature.properties.combined_count) / 5,
           fillOpacity: 0.7,
           stroke: false
         });
