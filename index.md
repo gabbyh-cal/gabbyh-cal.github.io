@@ -4,4 +4,8 @@ title: Home
 permalink: /
 ---
 
-<iframe src="{{ '/map.html' | relative_url }}" width="100%" height="600" style="border:none;"></iframe>
+<div id="map" style="height: 600px;"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
