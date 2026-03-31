@@ -1,3 +1,4 @@
+console.log("script loaded");
 const map = L.map('map').setView([37.87, -122.27], 12);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
