@@ -8,4 +8,7 @@ permalink: /
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="script.js"></script>
+<script>
+  window.STATIONS_URL = "{{ '/assets/data/stations.geojson' | relative_url }}";
+</script>
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
