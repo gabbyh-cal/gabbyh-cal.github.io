@@ -30,3 +30,17 @@ fetch(window.STATIONS_URL)
     map.fitBounds(layer.getBounds());
   })
   .catch(error => console.error("Error loading GeoJSON:", error));
+
+fetch("assets/data/bike_network.geojson")
+  .then(res => res.json())
+  .then(data => {
+    L.geoJSON(data, {
+      style: function(feature) {
+        return {
+          color: "#2ca25f",
+          weight: 2,
+          opacity: 0.8
+        };
+      }
+    }).addTo(map);
+  });
