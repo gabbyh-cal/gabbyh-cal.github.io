@@ -1,5 +1,5 @@
 console.log("script loaded");
-const map = L.map('map').setView([37.87, -122.27], 12);
+const map = L.map('map').setView([37.832, -122.264], 12);
 
 L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
   attribution: "&copy; OpenStreetMap & CARTO",
@@ -27,7 +27,7 @@ fetch(window.STATIONS_URL)
         `);
       }
     }).addTo(map);
-    map.fitBounds(layer.getBounds());
+    //map.fitBounds(layer.getBounds());
   })
   .catch(error => console.error("Error loading GeoJSON:", error));
 
