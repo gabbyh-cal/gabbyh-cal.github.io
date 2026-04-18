@@ -4,8 +4,8 @@ title: Home
 permalink: /
 ---
 
-<label for="yearSlider">Year: <span id="yearLabel">2024</span></label>
-<input type="range" id="yearSlider" min="2019" max="2026" step="1" value="2019">
+<label for="yearSlider">Year: <span id="yearLabel">2026</span></label>
+<input type="range" id="yearSlider" min="2019" max="2026" step="1" value="2026">
 
 <div id="map" style="height: 600px;"></div>
 
