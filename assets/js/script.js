@@ -7,29 +7,46 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
   maxZoom: 20
 }).addTo(map);
 
-fetch(window.STATIONS_URL)
-  .then(response => response.json())
-  .then(data => {
-    const layer = L.geoJSON(data, {
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {
-          radius: 2 + Math.sqrt(feature.properties.combined_count) / 4,
-          fillOpacity: 0.7,
-          stroke: false
-        });
-      },
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(`
-          <strong>${feature.properties.name}</strong><br>
-          Start count: ${feature.properties.start_count}<br>
-          End count: ${feature.properties.end_count}<br>
-          Combined count: ${feature.properties.combined_count}
-        `);
-      }
-    }).addTo(map);
-    //map.fitBounds(layer.getBounds());
-  })
-  .catch(error => console.error("Error loading GeoJSON:", error));
+let stationLayer = null;
+
+const yearSlider = document.getElementById("yearSlider");
+const yearLabel = document.getElementById("yearLabel");
+
+function renderStations(selectedYear) {
+  if (stationLayer) {
+    map.removeLayer(stationLayer);
+  }
+
+  fetch(`assets/data/stations_${String(selectedYear).slice(-2)}.geojson`)
+    .then(response => response.json())
+    .then(data => {
+      stationLayer = L.geoJSON(data, {
+        pointToLayer: function (feature, latlng) {
+          return L.circleMarker(latlng, {
+            radius: 2 + Math.sqrt(feature.properties.combined_count) / 4,
+            fillOpacity: 0.7,
+            stroke: false
+          });
+        },
+        onEachFeature: function (feature, layer) {
+          layer.bindPopup(`
+            <strong>${feature.properties.name}</strong><br>
+            Start count: ${feature.properties.start_count}<br>
+            End count: ${feature.properties.end_count}<br>
+            Combined count: ${feature.properties.combined_count}
+          `);
+        }
+      }).addTo(map);
+    })
+    .catch(error => console.error("Error loading GeoJSON:", error));
+}
+
+renderStations(yearSlider.value);
+
+yearSlider.addEventListener("input", function () {
+  yearLabel.textContent = this.value;
+  renderStations(this.value);
+});
 
 fetch("assets/data/bike_network.geojson")
   .then(res => res.json())
