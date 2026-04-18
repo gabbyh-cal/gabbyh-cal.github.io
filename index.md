@@ -5,14 +5,7 @@ permalink: /
 ---
 
 <label for="yearSlider">Year: <span id="yearLabel">2024</span></label>
-<input
-  type="range"
-  id="yearSlider"
-  min="2019"
-  max="2024"
-  step="1"
-  value="2024"
->
+<input type="range" id="yearSlider" min="2019" max="2024" step="1" value="2024">
 
 <div id="map" style="height: 600px;"></div>
 
