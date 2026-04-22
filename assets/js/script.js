@@ -61,3 +61,24 @@ fetch("assets/data/bike_network.geojson")
       }
     }).addTo(map);
   });
+
+// second map
+const map2 = L.map('map2').setView([37.87, -122.27], 12);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map2);
+
+// new line layer
+fetch("assets/data/BerkeleySidewalk.geojson")
+  .then(response => response.json())
+  .then(data => {
+    L.geoJSON(data, {
+      style: function(feature) {
+        return {
+          weight: 3,
+          opacity: 1
+        };
+      }
+    }).addTo(map2);
+  });
