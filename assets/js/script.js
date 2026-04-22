@@ -78,7 +78,7 @@ fetch("assets/data/BerkeleySidewalk.geojson")
     L.geoJSON(data, {
       style: function(feature) {
         return {
-          weight: 3,
+          weight: 1,
           opacity: 1
         };
       }
