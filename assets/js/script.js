@@ -72,7 +72,7 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
 }).addTo(map2);
 
 // new line layer
-fetch("assets/data/BerkeleySidewalk.geojson")
+fetch("assets/data/sidewalkbuffers.geojson")
   .then(response => response.json())
   .then(data => {
     L.geoJSON(data, {
