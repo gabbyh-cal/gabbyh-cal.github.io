@@ -54,17 +54,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td style="padding: 10px; border: 1px solid #ddd;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#E74C3C; margin-right:6px;"></span>0</td>
-      <td style="padding: 10px; border: 1px solid #ddd;">Residential – Low Transit Access</td>
-      <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">23</td>
-      <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">13,546</td>
-      <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.47</td>
-      <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.24 mi</td>
-      <td style="padding: 10px; border: 1px solid #ddd;">Lower-density residential areas furthest from BART, likely serving recreational and local trips.</td>
-    </tr>
-    <tr style="background: #fafafa;">
-      <td style="padding: 10px; border: 1px solid #ddd;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#2ECC71; margin-right:6px;"></span>1</td>
+   <tr style="background: #fafafa;">
+      <td style="padding: 10px; border: 1px solid #ddd;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#2ECC71; margin-right:6px;"></span>0</td>
       <td style="padding: 10px; border: 1px solid #ddd;">Transit-Oriented Commercial Core</td>
       <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">13</td>
       <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">67,428</td>
@@ -73,7 +64,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       <td style="padding: 10px; border: 1px solid #ddd;">Highest activity and employment concentration, anchored near BART. Well-suited for commute and intermodal trips.</td>
     </tr>
     <tr>
-      <td style="padding: 10px; border: 1px solid #ddd;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#3498DB; margin-right:6px;"></span>2</td>
+      <td style="padding: 10px; border: 1px solid #ddd;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#3498DB; margin-right:6px;"></span>1</td>
       <td style="padding: 10px; border: 1px solid #ddd;">High-Density Mixed Urban</td>
       <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">32</td>
       <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">32,649</td>
@@ -82,13 +73,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       <td style="padding: 10px; border: 1px solid #ddd;">Dense, walkable neighborhoods blending residential and commercial uses with good transit proximity.</td>
     </tr>
     <tr style="background: #fafafa;">
-      <td style="padding: 10px; border: 1px solid #ddd;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#F39C12; margin-right:6px;"></span>3</td>
+      <td style="padding: 10px; border: 1px solid #ddd;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#F39C12; margin-right:6px;"></span>2</td>
       <td style="padding: 10px; border: 1px solid #ddd;">Residential – Transit Access</td>
       <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">86</td>
       <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">16,300</td>
       <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.34</td>
       <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">0.60 mi</td>
       <td style="padding: 10px; border: 1px solid #ddd;">The largest cluster. Predominantly residential neighborhoods within reasonable BART distance, likely generating first- and last-mile commute trips.</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #ddd;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#E74C3C; margin-right:6px;"></span>3</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">Residential – Low Transit Access</td>
+      <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">23</td>
+      <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">13,546</td>
+      <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.47</td>
+      <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">1.24 mi</td>
+      <td style="padding: 10px; border: 1px solid #ddd;">Lower-density residential areas furthest from BART, likely serving recreational and local trips.</td>
     </tr>
   </tbody>
 </table>

@@ -85,17 +85,25 @@ fetch("assets/data/sidewalkbuffers.geojson")
 */
 
 const clusterColors = {
-  0: "#E74C3C",
-  1: "#2ECC71",
-  2: "#3498DB",
-  3: "#F39C12",
+  0: "#2ECC71",
+  1: "#3498DB",
+  2: "#F39C12",
+  3: "#E74C3C",
 };
 
 const clusterLabels = {
-  0: "Residential - Low Transit Access",
-  1: "Transit-Oriented Commercial Core",
-  2: "High Access Mixed Urban",
-  3: "Residential - Transit Access",
+  0: "Transit-Oriented Commercial Core",
+  1: "High Access Mixed Urban",
+  2: "Residential - Transit Access",
+  3: "Residential - Low Transit Access",
+};
+
+// For better table and legend ordering
+const clusterRemap = {
+  1: 0,  // old cluster 1 (Transit Core) -> display as 0
+  2: 1,  // old cluster 2 (Mixed Urban) -> display as 1
+  3: 2,  // old cluster 3 (Residential Transit) -> display as 2
+  0: 3,  // old cluster 0 (Low Access) -> display as 3
 };
 
 L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
@@ -113,24 +121,32 @@ fetch("assets/data/stations_clustered.geojson")
   .then(data => {
     L.geoJSON(data, {
       pointToLayer: function (feature, latlng) {
-        const cluster = feature.properties.cluster;
+        const cluster = clusterRemap[feature.properties.cluster];
+        const p = feature.properties;
+
+        // large transparent circle for hit detection
+        const hitArea = L.circleMarker(latlng, {
+          radius: 12,
+          fillOpacity: 0,
+          stroke: false,
+          interactive: true,
+        }).bindTooltip(`
+          <strong>${p.name}</strong><br>
+          Cluster: ${clusterLabels[cluster]}<br>
+          Activity: ${Math.round(p.estimated_activity).toLocaleString()}<br>
+          Emp/Pop Balance: ${p.emp_pop_balance.toFixed(2)}<br>
+          Dist to BART: ${p.dist_to_bart_mi.toFixed(2)} mi
+        `,).addTo(map2);
+
+        // small visible circle
         return L.circleMarker(latlng, {
-          radius: 3,
+          radius: 4,
           fillColor: clusterColors[cluster],
           color: clusterColors[cluster],
           fillOpacity: 0.8,
           stroke: false,
+          interactive: false,  // clicks fall through to hitArea
         });
-      },
-      onEachFeature: function (feature, layer) {
-        const p = feature.properties;
-        layer.bindPopup(`
-          <strong>${p.name}</strong><br>
-          Cluster: ${clusterLabels[p.cluster]}<br>
-          Activity: ${Math.round(p.estimated_activity).toLocaleString()}<br>
-          Emp/Pop Balance: ${p.emp_pop_balance.toFixed(2)}<br>
-          Dist to BART: ${p.dist_to_bart_mi.toFixed(2)} mi
-        `);
       }
     }).addTo(map2);
   });
