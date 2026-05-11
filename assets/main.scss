@@ -1,0 +1,11 @@
+---
+---
+
+@import "minima";
+@import "css/style.css";
+
+.wrapper {
+  max-width: clamp(600px, 55%, 860px);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
