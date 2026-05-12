@@ -3,6 +3,7 @@ layout: page
 permalink: /
 ---
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
 <div class="hero">
   <h1 class="hero-title">Last Mile for the Last Mile</h1>
@@ -98,13 +99,46 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   <p><strong>Employment-Population Balance</strong> — The ratio of jobs to residents within the station area buffer. Values greater than 1 indicate employment-dominated contexts; values less than 1 indicate residential dominance. This measure distinguishes commercial and mixed-use station areas from purely residential ones (Gehrke & Welch, 2019).</p>
   <p><strong>Distance to Nearest Rail Station</strong> — The straight-line distance in miles from each bikeshare station to the nearest BART station. Proximity to rail has been consistently associated with higher bikeshare ridership, reflecting the role of bikeshare as a first- and last-mile solution to fixed-route transit (Shaheen et al., 2010; El-Assi et al., 2017).</p>
 </div>
+<div style="margin: 10px 0;">
+  <label>X Axis: 
+    <select id="xSelect">
+      <option>Distance to BART (mi)</option>
+      <option>Employment-Population Balance</option>
+      <option>Activity</option>
+    </select>
+  </label>
+  &nbsp;&nbsp;
+  <label>Y Axis:
+    <select id="ySelect">
+      <option>Combined Ridership</option>
+      <option>Origin Ridership</option>
+      <option>Destination Ridership</option>
+    </select>
+  </label>
+</div>
+<div id="scatterplot" style="width: 100%; height: 400px;"></div>
+<div id="barchart" style="width: 100%; height: 400px;"></div>
+<div style="margin: 10px 0px 80px 0px;">
+  <label for="barYearSlider">Year</label>
+  <div class="slider-container">
+    <input type="range" id="barYearSlider" min="2020" max="2025" step="1" value="2025" style="width: 100%;">
+    <div class="slider-labels">
+      <span>2020</span>
+      <span>2021</span>
+      <span>2022</span>
+      <span>2023</span>
+      <span>2024</span>
+      <span>2025</span>
+    </div>
+  </div>
+</div>
 
-<h4 style="margin-bottom: 8px; margin-top: 40px">BART Station Ridership</h4>
-<img src="/assets/charts/BART Trips.jpg" width="100%" alt="Ridership Trends">
-
+<img src="/assets/charts/BART Trips.jpg" width="100%" alt="BART Trips">
 <h1>Neighborhood Resource Disparity Effects on Bikeshare Ridership</h1>
-
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<iframe src="/assets/charts/tcac_lyft_map.html" width="100%" height="500px" frameborder="0"></iframe>
+<iframe src="/assets/charts/ridership_vs_opportunity.html" width="100%" height="500px" frameborder="0"></iframe>
+<iframe src="/assets/charts/ridership_by_year_category.html" width="100%" height="500px" frameborder="0"></iframe>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+

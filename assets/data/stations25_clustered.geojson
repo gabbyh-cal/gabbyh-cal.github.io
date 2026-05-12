@@ -1,6 +1,6 @@
 {
 "type": "FeatureCollection",
-"name": "stations_clustered",
+"name": "stations25_clustered",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "id": "BK-A3", "start_count": 1613, "end_count": 1517, "combined_count": 3130, "name": "College Ave at Alcatraz Ave", "lat": 37.8513755, "long": -122.2525233, "buffer_area_m2": 2007391.0339493908, "estimated_pop": 9668, "buffer_area_km2": 2.0074, "pop_per_km2": 4816.2, "buffer_radius_m": 800, "n_blockgroups": 16, "estimated_jobs": 5448, "estimated_activity": 15116, "emp_pop_balance": 0.5635, "dist_to_bart_m": 768.67447662753807, "dist_to_bart_mi": 0.478, "cluster": 3, "prob_cluster_0": 0.021500403421148038, "prob_cluster_1": 2.8262335288173333e-16, "prob_cluster_2": 0.027680005029532682, "prob_cluster_3": 0.95081959154931905 }, "geometry": { "type": "Point", "coordinates": [ -122.2525233, 37.8513755 ] } },
