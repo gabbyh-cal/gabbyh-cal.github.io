@@ -196,7 +196,8 @@ fetch("assets/data/stations25_clustered.geojson")
       plot_bgcolor: "#f9f9f9",
     };
 
-    Plotly.newPlot("scatterplot", getTrace("dist_to_bart_mi", "combined_count"), layout);
+    Plotly.newPlot("scatterplot", getTrace("dist_to_bart_mi", "combined_count"), layout,
+    { displayModeBar: false });
     
     document.getElementById("xSelect").addEventListener("change", function () {
       const xKey = xVars[this.value];
@@ -205,7 +206,8 @@ fetch("assets/data/stations25_clustered.geojson")
         ...layout,
         xaxis: { title: this.value },
         yaxis: { title: document.getElementById("ySelect").value },
-      });
+      },
+      { displayModeBar: false });
     });
 
     document.getElementById("ySelect").addEventListener("change", function () {
@@ -215,7 +217,8 @@ fetch("assets/data/stations25_clustered.geojson")
         ...layout,
         xaxis: { title: document.getElementById("xSelect").value },
         yaxis: { title: this.value },
-      });
+      },
+      { displayModeBar: false });
     });
  });
 
@@ -234,11 +237,12 @@ function renderBarChart(year) {
       const barTrace = [{
         x: sortedFeatures.map(f => f.id),
         y: sortedFeatures.map(f => f.combined_count),
+        text: sortedFeatures.map(f => f.name),
         type: "bar",
         marker: {
           color: sortedFeatures.map(f => clusterColors[clusterRemap[f.cluster]]),
         },
-        hovertemplate: "<b>%{x}</b><br>Combined Ridership: %{y}<extra></extra>",
+        hovertemplate: "<b>%{text}</b><br>Station ID: <b>%{x}</b><br>Combined Ridership: %{y}<extra></extra>",
       }];
 
       const barLayout = {
@@ -249,7 +253,7 @@ function renderBarChart(year) {
         plot_bgcolor: "#f9f9f9",
       };
 
-      Plotly.react("barchart", barTrace, barLayout);
+      Plotly.react("barchart", barTrace, barLayout, { displayModeBar: false });
       barYearLabel.textContent = year;
     });
 }
