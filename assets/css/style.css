@@ -72,3 +72,24 @@ label {
 .side-by-side.reverse {
   flex-direction: col-reverse;
 }
+
+
+.scatter-section {
+    background-color: #fafaf7;
+    padding: 20px;
+    h2 {
+        text-align: center;
+        font-family: sans-serif;
+    }
+}
+.scatter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    iframe {
+        width: 100%;
+        height: 450px;
+        border: none;
+    }
+}
+

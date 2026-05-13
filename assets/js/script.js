@@ -46,6 +46,7 @@ yearSlider.addEventListener("input", function () {
   renderStations(this.value);
 });
 
+// Add bike network
 fetch("assets/data/bike_network.geojson")
   .then(res => res.json())
   .then(data => {
@@ -61,7 +62,7 @@ fetch("assets/data/bike_network.geojson")
   });
 
 // MAP OF STATIONS BY TYPOLOGY -------------------------------------
-const map2 = L.map('map2').setView([37.87, -122.27], 12);
+const map2 = L.map('map2').setView([37.83, -122.26], 12);
 const clusterColors = {
   0: "#2ECC71",
   1: "#3498DB",
