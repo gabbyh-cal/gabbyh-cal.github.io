@@ -73,25 +73,58 @@ label {
 }
 
 
-.scatter-section {
-    background-color: #fafaf7;
-    padding: 20px;
-    h2 {
-        text-align: center;
-        font-family: sans-serif;
-    }
-}
-.scatter-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    iframe {
-        width: 100%;
-        height: 450px;
-        border: none;
-    }
-}
-
 ol li::marker {
   font-size: 1.5rem;
 }
+
+.station-feature {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 20px;
+}
+
+.station-feature img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.station-info {
+    flex: 1;
+}
+
+.station-name {
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.station-volume {
+    font-size: 1rem;
+}
+
+.station-feature-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.station-feature-stacked img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.station-info-stacked {
+    margin-top: 16px;
+    padding-left: 4px;
+}
+
+.station-info-stacked .station-name {
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.station-info-stacked .station-volume {
+    font-size: 1rem;
+}
+
