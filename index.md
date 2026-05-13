@@ -381,20 +381,6 @@ Median trip duration per year across all trips and stations signals how the BayW
 <p>
 As for our approach with infrastructure and built environment effects, we isolate classic bike trips only to show the influence of E-Bikes on travel behavior since its introduction to stations in 2024 (7.7 minutes and 6.4 minutes). In comparison with the classic bikes only trend, we can interpret the difference as commuters continuing to take the same kinds of trips from similar origin-destination pairs, but can now do so at a faster pace. It is also the case that E-Bikes likely created new forms of mobility for those who previously could not ascend streets with steep grades. The suggested impacts on ridership are strengthened by the share of trips by classic and electric bikes in 2024 and 2025, as visualized in the waffle chart. Electric bike trips gained 20% of the share compared to classic trips which lost 20% of the share. Considering the 15 new expansion stations weren’t installed until 2025, the introduction of E-Bikes into the Berkeley and Oakland BayWheels station fleet makes a considerable case for the influence on the rise of ridership since 2023. As explored in the graph below with neighborhood disparities, and in a station typology, the appearance and quality of the streetscape does play an important role in the generation of ridership.
 </p>
-<div class="station-feature">
-    <img src="assets/images/Telegraph and 49th.jpeg" alt="Telegraph Avenue and 49th Street Baywheels Station">
-    <div class="station-info">
-        <p class="station-name">Telegraph Avenue and 49th Street</p>
-        <p class="station-volume">2025 Annual Trip Volume: <strong>7,625</strong></p>
-    </div>
-</div>
-<div class="station-feature-stacked">
-    <img src="assets/images/street.png" alt="Foothill Boulevard and Fruitvale Avenue Baywheels Station">
-    <div class="station-info-stacked">
-        <p class="station-name">Foothill Boulevard and Fruitvale Avenue</p>
-        <p class="station-volume">2025 Annual Trip Volume: <strong>614 (only 64 trips to Fruitvale BART)</strong></p>
-    </div>
-</div>
 <!-- ─────────────────────────────────────────
      BUILT ENVIRONMENT EFFECTS SECTION
 ───────────────────────────────────────── -->
@@ -532,6 +518,20 @@ Statistical testing with control variables is required to further understand the
 <p>
 To demonstrate our two research paths converging, below is a visual comparison of a streetscape at MacArthur’s highest origin-destination pair, 49th Street and Telegraph Avenue, and Fruitvale’s highest origin-destination pair, Foothill Boulevard and Fruitvale Avenue. In addition to the density of attractive amenities, and proximity to generators in other neighborhoods, Telegraph Avenue (from 15th Street and Broadway to 51st Street) received complete streets bicycle and pedestrian interventions, installed by OakDOT from 2019 to 2022. While the data is influenced by shocks from pricing adjustments and the E-Bike fleet, there is a noticeable growth in ridership along Telegraph Avenue bike share stations: 49th Street (166%), Shattuck Avenue (208%) & 55th Street (91%). Installing improved bicycle facilities and traffic calming countermeasures is not likely to induce significant ridership, but the visual differences in streetscape quality helps us start a dialogue on what might explain the differences between the observed travel patterns of two Oakland neighborhood bike share stations.
 </p>
+<div class="station-feature">
+    <img src="assets/images/Telegraph and 49th.jpeg" alt="Telegraph Avenue and 49th Street Baywheels Station">
+    <div class="station-info">
+        <p class="station-name">Telegraph Avenue and 49th Street</p>
+        <p class="station-volume">2025 Annual Trip Volume: <strong>7,625</strong></p>
+    </div>
+</div>
+<div class="station-feature-stacked">
+    <img src="assets/images/street.png" alt="Foothill Boulevard and Fruitvale Avenue Baywheels Station">
+    <div class="station-info-stacked">
+        <p class="station-name">Foothill Boulevard and Fruitvale Avenue</p>
+        <p class="station-volume">2025 Annual Trip Volume: <strong>614 (only 64 trips to Fruitvale BART)</strong></p>
+    </div>
+</div>
 <!-- ─────────────────────────────────────────
      RESOURCE DISPARITY EFFECTS SECTION
 ───────────────────────────────────────── -->
