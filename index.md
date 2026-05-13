@@ -356,23 +356,38 @@ This distinction between private operation and public subsidy is important as it
   </div>
 </div>
 <iframe src="/assets/charts/ridership-trends.html" width="100%" height="500px" frameborder="0"></iframe>
-<div class="side-by-side">
-  <img src="/assets/charts/E-Bike Shift.jpg" alt="E-Bike Shift">
-  <div class="side-text">
-    <p>Large rollout of E-bikes in 2024 and their impact on ridership</p>
-  </div>
-</div>
-<div class="side-by-side reverse">
-  <div class="side-text">
-    <p>As we can see to the right, average trip time was reduced with the introduction of e-bikes</p>
-  </div>
-  <img src="/assets/charts/Median Trip Duration.jpg" alt="Median Trip Duration">
+<h4>Ridership Trends and City Contexts</h4>
+<p>
+Total ridership volumes per BayWheels station were aggregated into groups by city, and then further grouped by the total rides per month during a given year. Seeing the results visually displayed helps us situate BayWheels trends in the East Bay: seasonal variations with lower ridership in winter versus summer & fall, a summer trough period in Berkeley as students depart the city, and an exponential increase of total ridership across all stations for both cities in the summer and fall of 2024. Of the top 30 origin-destination pairs for total ridership across the study period: 24 pairs included a BART station at either the start or end of a trip, 2 pairs were pandemic-era ‘leisure’ loop trips (El Embarcadero, and Addison Street & 4th Street) that have since seen dramatic decline though the total ridership volume for each station alone has increased over time, and 4 pairs that were associated with the University of California, Berkeley.
+</p>
+<p>
+A few shocks to the system can help contextualize the ridership trends: 
+</p>
+<ul>
+  <li>September 2023: BART headways are reduced on weekdays from 20 minutes to 10 minutes.</li>
+  <li>November 2023: Membership cost reduction from $169 to $150, and Membership E-Bike cost from 20 cents a minute to 15 cents. This is in addition to the existing Bike Share for All program for low-income residents.</li>
+  <li>April 2024: MTC funded E-Bike fleet launches in the East Bay.</li>
+  <li>January to December 2025: Oakland installs 15 expansion stations in MTC EPC neighborhoods.</li>
+</ul>
+<p>
+For the impacts of pricing, the trends found in the Rider Type Share table are aligned with previous findings in the literature analyzing the relationship between travel behavior and price preference (Kaviti et al., 2019). In 2024, for both BART and Non-BART trips, BayWheels trips made by users with a membership grew by 68% and 79% respectively. Following 2022, the membership and casual ridership share gap for all trips has increased from a 14% difference to a 52% difference in favor of the share by users with a membership. However, though the membership trends suggest an impact of pricing policy, and are reflective of similar ridership trends in other major American cities, our analysis acknowledges that there are a bundle of factors influencing ridership. The next charts explore to what extent the E-Bike fleet launch in 2024 impacted bike share ridership.
+</p>
+<img src="/assets/charts/E-Bike Shift.jpg" alt="E-Bike Shift">
+<img src="/assets/charts/Median Trip Duration.jpg" alt="Median Trip Duration">
+<h4>Electric Bike Impacts</h4>
+<p>
+Median trip duration per year across all trips and stations signals how the BayWheels system moved from technological novelty in 2020 (13.8 minutes) towards an increasingly key part of the regional and city transportation network in 2025 (8.2 minutes). The plateau for classic bike trips only beginning in 2023 is indicative of an emerging transportation technology finally “nudging” (Riggs, 2022) potential users into utilizing a bike share service as a connection for first-and-last mile trips. In alignment with our hypothesis, these results suggest how BayWheels fits the standard bike share model of providing quick trips for users who are already within a preexisting density of other amenity-destinations and transportation.
+</p>
+<p>
+As for our approach with infrastructure and built environment effects, we isolate classic bike trips only to show the influence of E-Bikes on travel behavior since its introduction to stations in 2024 (7.7 minutes and 6.4 minutes). In comparison with the classic bikes only trend, we can interpret the difference as commuters continuing to take the same kinds of trips from similar origin-destination pairs, but can now do so at a faster pace. It is also the case that E-Bikes likely created new forms of mobility for those who previously could not ascend streets with steep grades. The suggested impacts on ridership are strengthened by the share of trips by classic and electric bikes in 2024 and 2025, as visualized in the waffle chart. Electric bike trips gained 20% of the share compared to classic trips which lost 20% of the share. Considering the 15 new expansion stations weren’t installed until 2025, the introduction of E-Bikes into the Berkeley and Oakland BayWheels station fleet makes a considerable case for the influence on the rise of ridership since 2023. As explored in the graph below with neighborhood disparities, and in a station typology, the appearance and quality of the streetscape does play an important role in the generation of ridership.
+</p>
 </div>
 
 <!-- ─────────────────────────────────────────
-     STATION TYPOLOGY SECTION
+     BUILT ENVIRONMENT EFFECTS SECTION
 ───────────────────────────────────────── -->
-<h1> Station Typology: Observations Across Similar Stations </h1>
+<h1>Built Environment Effects: Observations Across Station Types </h1>
+<h4>Baywheels Station Typology</h4>
 <div id="map2" style="height: 500px; margin-top: 20px;"></div>
 <table style="border-collapse: collapse; width: 100%; font-size: 13px; table-layout: fixed; margin-top: 20px">
   <thead>
@@ -431,6 +446,16 @@ This distinction between private operation and public subsidy is important as it
   <p><strong>Employment-Population Balance</strong> — The ratio of jobs to residents within the station area buffer. Values greater than 1 indicate employment-dominated contexts; values less than 1 indicate residential dominance. This measure distinguishes commercial and mixed-use station areas from purely residential ones (Gehrke & Welch, 2019).</p>
   <p><strong>Distance to Nearest Rail Station</strong> — The straight-line distance in miles from each bikeshare station to the nearest BART station. Proximity to rail has been consistently associated with higher bikeshare ridership, reflecting the role of bikeshare as a first- and last-mile solution to fixed-route transit (Shaheen et al., 2010; El-Assi et al., 2017).</p>
 </div>
+<p>
+  Classifying similar stations together allows us to do two things:
+  <ol>
+    <li>Visualize and compare ridership across station types, seeing which built environment variables have the greatest impact on ridership.</li>
+    <li>Introduce other variables to see their effects on ridership within one station type, to see the effects of that variable on ridership holding the other variables somewhat more constant/similar.</li>
+  </ol>
+</p>
+<p>
+We can use the visualization below to observe the individual effects of the different built environment characteristics we used to classify station types. The strongest observed correlation appears to be between ridership and distance from the nearest BART station, which is backed by existing research (Guo et. al. 2022, Faghih-Imani et. al. 2014).
+</p>
 <div style="margin: 10px 0;">
   <label>X Axis: 
     <select id="xSelect">
@@ -439,7 +464,7 @@ This distinction between private operation and public subsidy is important as it
       <option>Activity</option>
     </select>
   </label>
-  &nbsp;&nbsp;
+  &nbsp;
   <label>Y Axis:
     <select id="ySelect">
       <option>Combined Ridership</option>
@@ -449,6 +474,10 @@ This distinction between private operation and public subsidy is important as it
   </label>
 </div>
 <div id="scatterplot" style="width: 100%; height: 400px;"></div>
+<h4>Policy Implications</h4>
+<p>
+  Creating a station typology for bikeshare in the Bay Area has significant policy implications for regional transportation planning. It will allow transportation planners to understand underlying factors that make an effective station, and enable them to make informed decisions on not only station placement, but also road and street improvements to improve the bikeshare rider’s experience, as well as prioritization of pedestrian and bicycle facility development. Moreover, solutions can be tailored to station type, with the understanding that not all solutions apply to all station types.
+</p>
 <div id="barchart" style="width: 100%; height: 400px;"></div>
 <div style="margin: 10px 0px 80px 0px;">
   <label for="barYearSlider">Year</label>
@@ -464,25 +493,50 @@ This distinction between private operation and public subsidy is important as it
     </div>
   </div>
 </div>
+<h4>Outliers and Points of Interest</h4>
+<p>
+By grouping ridership by station type, we can see that stations that fall under “Residential - Low Transit Access” consistently have lower ridership across the years, which is expected given this station type’s inaccessibility to BART. Moreover, we can see several consistent high-performing outliers with the stations on UC Berkeley’s campus, and several BART stations, such as MacArthur and Downtown Berkeley stations. Downtown Berkeley, besides being located by the university, and MacArthur are located in neighborhoods with a high concentration of restaurants. Although we were unable to capture it in our analysis, previous literature confirms that universities, and a high concentration of restaurants are points of interest that have a significant positive effect on ridership (Guo et. al. 2022, Faghih-Imani et. al. 2014).
+</p>
+<h4>Weak Effect of Bicycle Facilities</h4>
+<p>
+We performed analysis for an array for bicycle facility variables including:
+<ul>
+<li>Length of major roads in 400m buffer: expected negative effect</li>
+<li>Length of minor roads in 400m buffer: expected positive effect</li>
+<li>Number of Baywheels stations in 800m buffer: expected positive effect</li>
+<li>Length of bicycle facility in 800m buffer: expected positive effect</li>
+</ul>
+</p>
+<p>
+We found that for Baywheels stations in the East Bay, there was no significant correlation between length of major roads or length of minor roads and ridership volume. In Montreal, Fgahih-Imani, et. al. found that length of major roads had a negative effect on ridership while length of minor roads had a positive effect. We also found that the number of Baywheels stations in proximity had no correlation with ridership, which is surprising since station density was shown to have a significant positive effect on ridership. We found a moderate correlation (r=0.40) between length of bicycle lanes near a station and ridership volume for stations in the “Residential area – low transit access” cluster, but otherwise weak or no correlation for other station types. The limitation of this analysis is that it was constrained to 2025 data only, and newer stations may have lower ridership numbers.
+</p>
 
 <!-- ─────────────────────────────────────────
      RESOURCE DISPARITY EFFECTS SECTION
 ───────────────────────────────────────── -->
+<h4>BART Neighborhood Disparities</h4>
 <img src="/assets/charts/BART Trips.jpg" width="100%" alt="BART Trips">
+<p>
+Statistical testing with control variables is required to further understand the dynamics of what attracts and generates trips in the East Bay context, explored in more detail in the Station Typology section. Returning to our initial hypothesis, an imbalance between bike share stations located in amenity-rich neighborhoods and neighborhoods with a low supply of public goods can be explored through patterns present in the raw ridership folder. MacAruther BART, with 61,163 total first or last mile trips (ride starts or ends) is located adjacent to the Temescal, Mosswood and Shafter neighborhoods, rapidly gentrifying areas with high-income renters that Motivate/Lyft initially planned station sites around. Whereas, with Fruitvale BART at 3,642 first or last mile trips, Motivate initially didn’t place a station east of High Street in East Oakland, even though the area is arguably denser and has more transit dependent residents than the North Oakland neighborhoods. The pattern of bike share development in the East Bay, and its associated ridership, is reflective of the layered transportation discrimination history (Golub et al., 2013; Stehlin & Payne, 2022) emerging into the present.
+</p>
+<p>
+To demonstrate our two research paths converging, below is a visual comparison of a streetscape at MacArthur’s highest origin-destination pair, 49th Street and Telegraph Avenue, and Fruitvale’s highest origin-destination pair, Foothill Boulevard and Fruitvale Avenue. In addition to the density of attractive amenities, and proximity to generators in other neighborhoods, Telegraph Avenue (from 15th Street and Broadway to 51st Street) received complete streets bicycle and pedestrian interventions, installed by OakDOT from 2019 to 2022. While the data is influenced by shocks from pricing adjustments and the E-Bike fleet, there is a noticeable growth in ridership along Telegraph Avenue bike share stations: 49th Street (166%), Shattuck Avenue (208%) & 55th Street (91%). Installing improved bicycle facilities and traffic calming countermeasures is not likely to induce significant ridership, but the visual differences in streetscape quality helps us start a dialogue on what might explain the differences between the observed travel patterns of two Oakland neighborhood bike share stations.
+</p>
 <h1>Neighborhood Resource Disparity Effects on Bikeshare Ridership</h1>
 <p>
 Mobility access is heavily influenced by personal characteristics such as race and income (Dill et al. 2022). Historical exclusionary policies, such as redlining and urban renewal, have dramatically impacted who can – and cannot – access transportation across public and private modes of transportation (Dill et al. 2022). For these reasons, we use race and income – in conjunction with TCAC derived opportunity score – to understand how Lyft’s Baywheels ridership is affected across geographies. While our analysis is not robust enough to determine correlation and causality between Baywheels stations siting, ridership, and inequitable mobility distribution, unequal mobility patterns persist in bikeshare adoption in lower-resource areas compared to moderate-, high-, and highest-resource census tracts across both Berkeley and Oakland. 
+<h4>Lyft Bike Ridership By TCAC Opportunity Score</h4>
 </p>
 <iframe src="/assets/charts/tcac_lyft_map.html" width="100%" height="500px" frameborder="0"></iframe>
 <p>
-A majority of Berkeley and Oakland’s highest-resource neighborhoods are located in the hills and outside of close proximity to the Baywheels network. Lyft’s Baywheels bikeshare network almost exclusively serves the flatlands in both Berkeley and Oakland where lower-resource census tracts are typically located. However, as seen in Map # Baywheels tend to have a clustering effect for trip origin at attractive magnet amenities such as BART Stations and the University of California, Berkeley.
+A majority of Berkeley and Oakland’s highest-resource neighborhoods are located in the hills and outside of close proximity to the Baywheels network. Lyft’s Baywheels bikeshare network almost exclusively serves the flatlands in both Berkeley and Oakland where lower-resource census tracts are typically located. However, as seen in <i>Lyft Bike Ridership By TCAC Opportunity Score</i>, Baywheels tend to have a clustering effect for trip origin at attractive magnet amenities such as BART Stations and the University of California, Berkeley.
 </p>
 <p>
 While there is a visible ridership difference between low- and high-resource areas, a seemingly bigger determinant of ridership origin when using the Baywheels service is the presence of these points-of-interest rather than resource score. Through our analysis we cannot conclusively say that opportunity score impacts ridership, but what we can say is that the lack of points-of-interests that drive Baywheels ridership are not present in low-resource tracts to drive ridership in comparison to higher-resource areas.
 </p>
 <iframe src="/assets/charts/ridership_vs_opportunity.html" width="100%" height="500px" frameborder="0"></iframe>
 <p>
-To illustrate the slight impact of opportunity score on ridership, Chart # illustrates a scatterplot regression analysis of Baywheels ridership. There is a positive relationship between ridership and opportunity score, however the gentle slope of the regression suggests that while opportunity score does impact ridership, such scores are not the main driver of trends. Further, the presence of low-ridership stations in each opportunity category suggests that variables external to opportunity category and score influence ridership behavior such as station proximity to BART and commercial districts as seen in Map #. Notably, while high-opportunity areas contain the highest-performing stations, low-opportunity areas rarely reach similar ridership levels, suggesting potential structural constraints on usage in lower-resource neighborhoods.
+To illustrate the slight impact of opportunity score on ridership, <i>Trend: Ridership vs. Opportunity Score</i> illustrates a scatterplot regression analysis of Baywheels ridership. There is a positive relationship between ridership and opportunity score, however the gentle slope of the regression suggests that while opportunity score does impact ridership, such scores are not the main driver of trends. Further, the presence of low-ridership stations in each opportunity category suggests that variables external to opportunity category and score influence ridership behavior such as station proximity to BART and commercial districts as seen in <i>Lyft Bike Ridership By TCAC Opportunity Score</i>. Notably, while high-opportunity areas contain the highest-performing stations, low-opportunity areas rarely reach similar ridership levels, suggesting potential structural constraints on usage in lower-resource neighborhoods. 
 </p>
 <iframe src="/assets/charts/ridership_by_year_category.html" width="100%" height="500px" frameborder="0"></iframe>
 <p>
@@ -495,12 +549,51 @@ We originally hypothesized that neighborhoods previously disinvested from throug
 <!-- ─────────────────────────────────────────
      LIMITATIONS SECTION
 ───────────────────────────────────────── -->
-
-
-
+<h1>Limitations</h1>
+<h4>DD-Type 1: Data We Know is Missing</h4>
+<ul>
+  <li><b>Rider demographic data:</b> Lyft also does not disclose rider demographic information (gender, race, income). Trips are abstract points, devoid of any context for who is using ride share. A lack of demographic information and the route taken between points leaves us with a significant barrier to comprehending the BayWheels system as a form of transportation. </li>
+  <li><b>Sidewalk data:</b> We weren’t able to rigorously test our initial ideas on the influence of bicycle lanes and adjoining sidewalk environments since this data is either incomplete or completely unavailable at the current moment. Several municipalities had bike lane data, but were updated several years ago, lacking installation dates, the facility classification, and the mileage of the facility. A dataset for sidewalks existed, but we don’t know much concerning its pavement quality, accessibility for disabled pedestrians, mix of micro-scale design features, and the aesthetics of fronting land uses. Upon realizing that we needed to build an inventory from scratch, we opted to use the land use classification procedure from Gehrke and colleagues (2019) to suggest what types of streetscapes and bicycle facilities host bike share stations. 
+</li>
+</ul>
+<h4>DD-Type 2 & 6: Data we Don’t Know is Missing & the Counterfactual</h4>
+<ul>
+<li><b>Route data:</b> We can’t predict or confidently predict which routes a bike share user will take since Lyft’s data only tracks start and end coordinates. We don’t know the routes taken between points in a bike network. Leaving planners unable to determine with certainty the exact purpose of a bike share trip, or how users were making route decisions. We can only infer from trip time duration, and origin-destination flows.</li>
+<li><b>Missing trip records:</b> Lyft only captures successfully recorded trips into the database. As revealed in the data and methods section, there was a gap of ridership data entry during 2021, and during the peak of the pandemic. We also don’t get a sense of demand through unsuccessful trips: no bikes available, a station was too far away, or a potential user could not afford a ride. In the data cleaning process described previously, our statistical distribution led us to remove rides under 2 minutes. Since Lyft did not keep track of a ‘failed ride’ category due to flat tires or software malfunctions, our analysis doesn’t account for rides that were attempted in good faith.</li>
+<li><b>Pricing:</b> Ridership reflects the BayWheels station network, bike types, and pricing scheme as it exists in relation to the built environment which presents revenue-earning opportunities for Lyft to maintain operations. We don’t know what a truly public-serving bike share system looks like, and are unable to determine travel patterns from people who fall outside the traditional traded sector 9-5 office job demographic. We are also aware of Oakland and Berkeley’s expansion stations to come in the near future. For now, we can only speculate what the counterfactual for ridership might be in the places where the expansion stations go. Along these lines, we can only imagine counterfactual scenarios where there were similar patterns of adjacent land use development and streetscape intervention initiatives undertaken in low resource neighborhoods. What if Fruitvale Avenue had an equivalent.</li>
+</ul>
+<h4>MAUP</h4>
+<p>
+The Modifiable Areal Unit Problem is described as how spatial boundaries, such as our selected use of census tracts, alter and coerce data in our statistical and visual interpretations of data. There are two forms of MAUP: Scale Effect and Zone Effect. Our analysis falls under the scale effect as we used census tracts to understand ridership trends across census tract opportunity scores. However, census tract boundaries are meant to understand population characteristics and not oriented towards mobility analysis. While the population characteristics are vital in understanding who lives in what census tract, they are not representative of mobility characteristics, potentially introducing mischaracterizations in our data and visualizations.
+</p> 
+<h4>Ecological Fallacy</h4>
+<p>
+Our analysis takes into account ecological fallacy by trying to remain as true to the scale of the original data as possible without aggregating to another scale (i.e. from individual bike share stations into neighborhood polygons provided by a municipality). When we do utilize an areal unit (TCAC neighborhood polygons), we ensure that the unit displays the data which was collected at that scale, and we overlay station-level ridership on top of the polygon for comparative analysis without drawing causal inferences. Had we aggregated ridership into areal units, such as neighborhoods, it would have assumed all people in those places were equally as capable to ride bike share. Similarly, if a neighborhood had a select subset of individuals benefiting from bikeshare, while the rest of the neighborhood was not, the aggregate metric might mislead the real dynamics of individuals within a place (i.e. a rapidly gentrifying neighborhood in West Oakland might see inflated ridership numbers from a subset of new residents from a higher income class and racial group). 
+</p>
 <!-- ─────────────────────────────────────────
-     CONCLUSION
+   CONCLUSION
 ───────────────────────────────────────── -->
+<h1>Conclusion & Next Steps</h1>
+<h4>Conclusion</h4>
+<p>
+Our analysis of bike share in the East Bay cities of Berkeley and Oakland, using the conceptual framework of bike share services reproducing existing patterns of mobility injustice at the neighborhood and city scale, returns findings that suggest BayWheels primarily serves pre-existing mobility needs, connecting riders with highly-frequented points-of-interest. Bikeshare usage sees the highest ridership rates in areas with highly-frequented points-of-interest such as East Bay BART stations and the University of California, Berkeley. 
+</p>
+<p>
+Our creation of a station typology for East Bay Baywheels stations opens the gateway for more meaningful analysis and policy tools that could be utilized by MTC in deciding bikeshare station placement, bicycle and pedestrian facility improvements, and road changes that reduce the speed and impact of cars on active transportation users. In grouping similar stations together, policymakers and the public can begin to understand that not all solutions may fit all stations, and different improvements may aid certain classes of stations more effectively than others.
+</p>
+<p>
+With respect to the effect of bicycle facilities on ridership volume, many variables that were found to have effects on ridership in prior research were not observed to have a significant correlation with Baywheels ridership in the East Bay. Our analysis found that there was no significant correlation between length of major roads or length of minor roads and ridership volume in the East Bay. Moreover, station network density effects were not visible either – stations located closer to many other stations were not correlated with higher ridership. Lastly, we found a moderate correlation between length of bicycle lanes near a station and ridership volume for stations in the “Residential area – low transit access” cluster, but otherwise weak or no correlation for other station types. The limitation of this analysis is that it was constrained to 2025 data only, and newer stations may have lower ridership numbers.
+</p>
+<p>
+There was a suggested impact of E-Bike fleet rollout on ridership trends as derived from the mobility patterns analysis, additional shock factors such as pricing schemes for memberships and individual rides and the aforementioned effects of adjacent bicycle and pedestrian facilities were explored. However, we did not design a model to test for significance on a robust set of variables. Building into addressing our hypothesis, we were able to extract ridership trends suggesting a disparity between certain neighborhoods across the East Bay, reflective of those neighborhoods that bike share initially deemed suitable for a high profit margin on ridership revenue. A case study comparison of the streetscape aesthetics from a highly trafficked station in the Temescal neighborhood and one from the Fruitvale neighborhood continue the “already splintered” infrastructure dialogue (Stehlin et al., 2022). The ridership gap between MacArthur BART and Fruitvale BART prompted further analysis on the underlying conditions of all East Bay neighborhoods as to what extent bike share operators and platform companies were reinforcing the discriminatory patterns in transportation from the midcentury as observed by Golub and colleagues (2013). Future work interested in expanding this conceptual framing with bike share networks in North American cities should combine the elements of historical geography and urban data analysis to argue for the co-emergence of past and present disparities in the transportation landscape. 
+</p>
+<p>
+Regression analyses conducted also illustrated a weak positive relationship between ridership rates and opportunity score, which consists of racial and income demographics. Instead, the biggest driver of ridership appears to be proximity to magnet POIs such as large transit stops, schools, and commercial centers. 
+</p>
+<h4>Next Steps</h4>
+<p>
+Further research is needed to understand the long-term impacts of micromobility trends and Baywheels adoption in Berkeley and Oakland. Specifically, longitudinal studies are required to understand how future Baywheels expansions affect ridership across the two study cities with a particular emphasis on understanding how expansion stations in non-dense clusters and in lower-resource tracts affects bikeshare ridership. Municipal and regional planners and policy makers can take on such longitudinal studies to meet local and regional mobility equity goals and understand how exogenous factors, such as land-use, facility topology and health, and amenities and POIs impact Baywheels ridership. This research emerges at a crucial milestone in Lyft’s Baywheels history as the rideshare program is currently under consideration for renewal running through 2032. 
+</p>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
