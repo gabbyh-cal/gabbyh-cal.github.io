@@ -7,8 +7,8 @@ permalink: /
 
 <div class="hero">
   <h1 class="hero-title">Last Mile for the Last Mile</h1>
-  <p class="hero-subtitle">Effects of the Built Environment and Implications for Equity</p>
-  <p class="hero-meta"><strong>Group 7</strong> · Urban Informatics Final Project</p>
+  <p class="hero-subtitle">Effects of the Built Environment on Bikeshare and Implications for Equity</p>
+  <p class="hero-meta"><strong>Jack Moorehead · Gabby Han · Gyasi Pigott</strong> · Urban Informatics Final Project</p>
 </div>
 <img src='assets/images/baywheels-header1.jpg'>
 
@@ -27,321 +27,315 @@ This distinction between private operation and public subsidy is important as it
      DATA AND METHODS SECTION
 ───────────────────────────────────────── -->
 <h1>Data and Methods</h1>
-<ol>
-  <!-- ─────────────────────────────────────────
-       1. Sources
-  ───────────────────────────────────────── -->
-  <li>
-    <h3>Sources</h3>
+<!-- ─────────────────────────────────────────
+     1. Sources
+───────────────────────────────────────── -->
+  <h3>Sources</h3>
 
-    <p>
-      For our research project, we compiled a dyadic dataset between Berkeley and Oakland,
-      California to encompass municipal level interactions with Lyft's Baywheels bikeshare service.
-    </p>
+  <p>
+    For our research project, we compiled a dyadic dataset between Berkeley and Oakland,
+    California to encompass municipal level interactions with Lyft's Baywheels bikeshare service.
+  </p>
 
-    <p>The following datasets were used in our analysis:</p>
+  <p>The following datasets were used in our analysis:</p>
 
-    <ul>
-      <li>
-        <strong>Alameda County Open Data Hub</strong> –
-        Geographic boundaries for geospatial analysis.
-      </li>
-      <li>
-        <strong>California Tax Credit Allocation Committee Opportunity Map and Neighborhood Change Data</strong> –
-        Identifies neighborhood characteristics that impact lived experience at the census tract level.
-      </li>
-      <li>
-        <strong>Lyft Baywheels System Data</strong> –
-        Raw ridership tabular data at the station level from 2020 to 2025.
-      </li>
-      <li>
-        <strong>United States Census Bureau TIGER/Line</strong> –
-        Geographic boundaries for geospatial analysis.
-      </li>
-      <li>
-        <strong>2022 American Community Survey (ACS)</strong> –
-        Population and employment absolute totals within a ½ mile euclidean buffer of station points.
-      </li>
-      <li>
-        <strong>LEHD Origin-Destination Employment Statistics (LODES)</strong> –
-        Metric for the intensity of land use within a ½ mile euclidean buffer of station points.
-      </li>
-    </ul>
-  </li>
+  <ul>
+    <li>
+      <strong>Alameda County Open Data Hub</strong> –
+      Geographic boundaries for geospatial analysis.
+    </li>
+    <li>
+      <strong>California Tax Credit Allocation Committee Opportunity Map and Neighborhood Change Data</strong> –
+      Identifies neighborhood characteristics that impact lived experience at the census tract level.
+    </li>
+    <li>
+      <strong>Lyft Baywheels System Data</strong> –
+      Raw ridership tabular data at the station level from 2020 to 2025.
+    </li>
+    <li>
+      <strong>United States Census Bureau TIGER/Line</strong> –
+      Geographic boundaries for geospatial analysis.
+    </li>
+    <li>
+      <strong>2022 American Community Survey (ACS)</strong> –
+      Population and employment absolute totals within a ½ mile euclidean buffer of station points.
+    </li>
+    <li>
+      <strong>LEHD Origin-Destination Employment Statistics (LODES)</strong> –
+      Metric for the intensity of land use within a ½ mile euclidean buffer of station points.
+    </li>
+  </ul>
 
-  <!-- ─────────────────────────────────────────
-       2. Methodology
-  ───────────────────────────────────────── -->
-  <li>
-    <h3>Methodology</h3>
+<!-- ─────────────────────────────────────────
+     2. Methodology
+───────────────────────────────────────── -->
+  <h3>Methodology</h3>
 
-    <p>
-      The analysis proceeds in three parts, building to our overarching hypothesis on the unequal
-      distribution of bike share service in the East Bay: where trips happen, how trips function in
-      relation to station location, and who is able to access bike share. First, general mobility
-      patterns across six years of tabular ridership data to understand system trends, and the
-      possible shocks to the system from policy and infrastructure interventions. Second, using the
-      established mobility patterns, a station typology cluster is calculated to help contextualize
-      the patterns in terms of adjacent land use and employment. Third, station-level ridership data
-      was compared across neighborhoods graded based on their economic and social opportunities
-      and resources.
-    </p>
+  <p>
+    The analysis proceeds in three parts, building to our overarching hypothesis on the unequal
+    distribution of bike share service in the East Bay: where trips happen, how trips function in
+    relation to station location, and who is able to access bike share. First, general mobility
+    patterns across six years of tabular ridership data to understand system trends, and the
+    possible shocks to the system from policy and infrastructure interventions. Second, using the
+    established mobility patterns, a station typology cluster is calculated to help contextualize
+    the patterns in terms of adjacent land use and employment. Third, station-level ridership data
+    was compared across neighborhoods graded based on their economic and social opportunities
+    and resources.
+  </p>
 
-    <ul>
+  <ul>
 
-      <!-- 2a. BayWheels Mobility Patterns -->
-      <li>
-        <h4>BayWheels Mobility Patterns</h4>
-        <ul>
-          <li>
-            <p>
-              Producing an assessment of mobility patterns required cleaning the raw BayWheels
-              ridership dataset from 2020 to 2025. The six individual annual data panels were derived
-              from a script we utilized to merge the monthly ridership reports. Our analysis begins
-              in May 2020 as a 'post-pandemic' temporal framework. Firstly, Lyft was still
-              transitioning from Ford's ridership data standards, which only had station ID as the
-              location identifier and this is incongruent with post May 2020 data. Second, rides
-              before May were insignificant for meaningful interpretation against other months and
-              years due to low volume amidst the shutdown of streets and land use attractions.
-              The newly merged dataframe consisted of 1.1 million rides.
-            </p>
-          </li>
-          <li>
-            <p>
-              Controlling for geographic scope, a script was produced to first filter for each ride's
-              origin and ending city using the Station ID, and then another filter for Berkeley and
-              Oakland cities only. After filtering out Emeryville, San Jose, and San Francisco trips,
-              the resulting Berkeley and Oakland specific dataframe encompassed 988,767 rides.
-            </p>
-          </li>
-          <li>
-            <p>
-              For tidying and readability, an additional 8,048 rides without trip start or end station
-              name or ID was dropped from the dataset as an insignificant portion of trips. Additionally,
-              2,532 trips from early 2021 were dropped due to all start and end station name and ID
-              values missing because of a data recordation error on behalf of Lyft. A total of fifteen
-              stations changed either station name or ID during the time span, and we produced a script
-              to aggregate ridership data for unique stations with the most frequent station name used.
-              For instance, 'West Oakland BART' and 'West Oakland Bart station' combined ridership
-              totals under 'West Oakland BART', with downstream grouped analysis merging and matching
-              on station name as opposed to ID. Year, month, day, and trip duration were extracted from
-              the trip start and trip end columns for downstream analysis. Separate date and time columns
-              were also utilized to determine the year a station opened from 2021 to 2025, using the
-              first recorded trip starting or ending at the station as a proxy in lieu of official
-              timelines. All column names, data features, and data types were altered when appropriate
-              for readability and analysis purposes.
-            </p>
-          </li>
-          <li>
-            <p>
-              As a final filtering of anomalous data, the trip duration category was used to find the
-              5% and 95% quantile to determine the distribution of trip duration extremes. The outlier
-              values were 2.5 minutes on the low end, and 36 minutes on the high end. After verifying
-              against precedent analyses and studies, a manual range of rides either below two minutes
-              or above 3 hours were dropped from the dataset. An additional 28,055 rides were dropped
-              and, as discussed in the limitations section, the rides on the lower end of the quantile
-              might have represented 'attempted rides' where the equipment either malfunctioned or a
-              user ran out of funds. Rides on the high end of the quantile were assumed to either have
-              been data entry errors, equipment malfunctions, or stolen bikes.
-            </p>
-          </li>
-          <li>
-            <p>
-              Using the available station-level data features, a variety of data exploration metrics
-              were computed to understand the trends happening across the system. For most comparisons
-              across stations, or visualizing a trend, it was important to use median instead of mean
-              given the highly skewed distribution of both station characteristics and trip characteristics.
-            </p>
-            <ul>
-              <li>
-                <strong>Ridership Volume per Station (2020–2025):</strong>
-                Dataframe cataloguing ridership totals per year per station, allowing us to easily find
-                trends in bike share trips over time. Additionally, the metrics of median ride and growth
-                percentage (using 2021 as the baseline) were calculated as further comparison values across
-                different stations. Eventual ridership line graph per city over the time frame is visualized
-                using this ridership dataframe. Case study metrics were sourced from this dataframe.
-              </li>
-              <li>
-                <strong>Origin-Destination Pairs (2020–2025):</strong>
-                Dataframe cataloguing ridership totals per uni-directional origin-destination pair to
-                understand which stations tended to travel between the most. Case study metrics were
-                sourced from this dataframe.
-              </li>
-              <li>
-                <strong>Median Trip Duration (all bikes):</strong>
-                In addition to showing the 25th, 75th, and IQR values, this metric shows how users'
-                interaction with BayWheels with concern to time changed since the pandemic.
-              </li>
-              <li>
-                <strong>Median Trip Duration (classic bikes):</strong>
-                Uses the same statistical logic for all bikes, but this metric helps us understand the
-                effect of e-bikes on BayWheels travel times across the system. Filtering for classic
-                bikes alone allows us to understand the true travel behavior of users based on time
-                spent riding.
-              </li>
-              <li>
-                <strong>Membership Share (2020–2025):</strong>
-                A summary table of casual and membership users across the system. The growth patterns
-                are used to assess the effectiveness of pricing policy as an intervention for inducing
-                ridership.
-              </li>
-              <li>
-                <strong>BART Trips (2020–2025):</strong>
-                Based on trips which have a start or an end at a BART station, and aggregated year by
-                year per station. The metric allows us to understand the distribution of bike share
-                resources based on a station's 'first and last mile' metric. Additionally, the BART
-                and Non-BART trip reference metrics are sourced from this analysis.
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+    <!-- 2a. BayWheels Mobility Patterns -->
+    <li>
+      <h4>BayWheels Mobility Patterns</h4>
+      <ul>
+        <li>
+          <p>
+            Producing an assessment of mobility patterns required cleaning the raw BayWheels
+            ridership dataset from 2020 to 2025. The six individual annual data panels were derived
+            from a script we utilized to merge the monthly ridership reports. Our analysis begins
+            in May 2020 as a 'post-pandemic' temporal framework. Firstly, Lyft was still
+            transitioning from Ford's ridership data standards, which only had station ID as the
+            location identifier and this is incongruent with post May 2020 data. Second, rides
+            before May were insignificant for meaningful interpretation against other months and
+            years due to low volume amidst the shutdown of streets and land use attractions.
+            The newly merged dataframe consisted of 1.1 million rides.
+          </p>
+        </li>
+        <li>
+          <p>
+            Controlling for geographic scope, a script was produced to first filter for each ride's
+            origin and ending city using the Station ID, and then another filter for Berkeley and
+            Oakland cities only. After filtering out Emeryville, San Jose, and San Francisco trips,
+            the resulting Berkeley and Oakland specific dataframe encompassed 988,767 rides.
+          </p>
+        </li>
+        <li>
+          <p>
+            For tidying and readability, an additional 8,048 rides without trip start or end station
+            name or ID was dropped from the dataset as an insignificant portion of trips. Additionally,
+            2,532 trips from early 2021 were dropped due to all start and end station name and ID
+            values missing because of a data recordation error on behalf of Lyft. A total of fifteen
+            stations changed either station name or ID during the time span, and we produced a script
+            to aggregate ridership data for unique stations with the most frequent station name used.
+            For instance, 'West Oakland BART' and 'West Oakland Bart station' combined ridership
+            totals under 'West Oakland BART', with downstream grouped analysis merging and matching
+            on station name as opposed to ID. Year, month, day, and trip duration were extracted from
+            the trip start and trip end columns for downstream analysis. Separate date and time columns
+            were also utilized to determine the year a station opened from 2021 to 2025, using the
+            first recorded trip starting or ending at the station as a proxy in lieu of official
+            timelines. All column names, data features, and data types were altered when appropriate
+            for readability and analysis purposes.
+          </p>
+        </li>
+        <li>
+          <p>
+            As a final filtering of anomalous data, the trip duration category was used to find the
+            5% and 95% quantile to determine the distribution of trip duration extremes. The outlier
+            values were 2.5 minutes on the low end, and 36 minutes on the high end. After verifying
+            against precedent analyses and studies, a manual range of rides either below two minutes
+            or above 3 hours were dropped from the dataset. An additional 28,055 rides were dropped
+            and, as discussed in the limitations section, the rides on the lower end of the quantile
+            might have represented 'attempted rides' where the equipment either malfunctioned or a
+            user ran out of funds. Rides on the high end of the quantile were assumed to either have
+            been data entry errors, equipment malfunctions, or stolen bikes.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using the available station-level data features, a variety of data exploration metrics
+            were computed to understand the trends happening across the system. For most comparisons
+            across stations, or visualizing a trend, it was important to use median instead of mean
+            given the highly skewed distribution of both station characteristics and trip characteristics.
+          </p>
+          <ul>
+            <li>
+              <strong>Ridership Volume per Station (2020–2025):</strong>
+              Dataframe cataloguing ridership totals per year per station, allowing us to easily find
+              trends in bike share trips over time. Additionally, the metrics of median ride and growth
+              percentage (using 2021 as the baseline) were calculated as further comparison values across
+              different stations. Eventual ridership line graph per city over the time frame is visualized
+              using this ridership dataframe. Case study metrics were sourced from this dataframe.
+            </li>
+            <li>
+              <strong>Origin-Destination Pairs (2020–2025):</strong>
+              Dataframe cataloguing ridership totals per uni-directional origin-destination pair to
+              understand which stations tended to travel between the most. Case study metrics were
+              sourced from this dataframe.
+            </li>
+            <li>
+              <strong>Median Trip Duration (all bikes):</strong>
+              In addition to showing the 25th, 75th, and IQR values, this metric shows how users'
+              interaction with BayWheels with concern to time changed since the pandemic.
+            </li>
+            <li>
+              <strong>Median Trip Duration (classic bikes):</strong>
+              Uses the same statistical logic for all bikes, but this metric helps us understand the
+              effect of e-bikes on BayWheels travel times across the system. Filtering for classic
+              bikes alone allows us to understand the true travel behavior of users based on time
+              spent riding.
+            </li>
+            <li>
+              <strong>Membership Share (2020–2025):</strong>
+              A summary table of casual and membership users across the system. The growth patterns
+              are used to assess the effectiveness of pricing policy as an intervention for inducing
+              ridership.
+            </li>
+            <li>
+              <strong>BART Trips (2020–2025):</strong>
+              Based on trips which have a start or an end at a BART station, and aggregated year by
+              year per station. The metric allows us to understand the distribution of bike share
+              resources based on a station's 'first and last mile' metric. Additionally, the BART
+              and Non-BART trip reference metrics are sourced from this analysis.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
 
-      <!-- 2b. Station Typology -->
-      <li>
-        <h4>Station Typology</h4>
-        <ul>
-          <li>
-            <p>
-              In order to make our observations of ridership patterns more meaningful, we first develop
-              a bikeshare station typology to group stations with similar built environment characteristics
-              together. This typology is based on Steven R. Gehrke and Timothy F. Welch's "A bikeshare
-              station area typology to forecast the station-level ridership of system expansion" (2019),
-              in which they use five built environment variables to classify existing bikeshare station
-              areas in Washington D.C. Of the five variables, we used three in our analysis:
-            </p>
-            <ul>
-              <li><strong>Activity:</strong> Number of persons and jobs</li>
-              <li><strong>Employment-population balance:</strong> Ratio of jobs to persons</li>
-              <li><strong>Distance (miles) to nearest rail station</strong></li>
-            </ul>
-          </li>
-          <li>
-            <p>
-              The two variables from the paper that were not included in our analysis are beta index
-              (the ratio of street links to intersection nodes) and distance to nearest park. Across
-              the existing literature, the first three variables are much more often cited for their
-              influence on ridership compared to the latter two. For this reason, given time constraints
-              and difficulty acquiring the necessary data, these variables were excluded in our analysis.
-            </p>
-          </li>
-          <li>
-            <p>Two other key differences in our approach:</p>
-            <ul>
-              <li>
-                Instead of forming a grid and classifying each area of the grid, we classify each station
-                directly since we are not attempting to predict ridership of a future station based on
-                its location.
-              </li>
-              <li>
-                The paper uses Latent Class Cluster Analysis (LCCA). In Python, the closest equivalent
-                is Gaussian Mixture Model (GMM), via sklearn, which is model-based and probabilistic
-                like LCCA.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <p>Clustering approach:</p>
-            <ul>
-              <li>
-                The optimal number of clusters was selected by fitting GMMs for k=2 through k=8 and
-                choosing the solution with the lowest Bayesian Information Criterion (BIC), a model
-                selection metric that balances goodness of fit against model complexity, where lower
-                values indicate a better balance. The BIC declined sharply from k=3 (944.7) to k=4
-                (832.8) before rising again, indicating that four clusters best represented the
-                underlying structure of the data.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <p>
-              Given our clusters, we then performed exploratory analysis of each station cluster against
-              several other factors that have been shown to influence station ridership. Based on the
-              work of Faghih-Imani et al. (2014) on Bixi ridership in Montreal, we explored the effects
-              of several bicycle infrastructure variables on ridership:
-            </p>
-            <ul>
-              <li><strong>Length of major roads in 400m buffer:</strong> expected negative effect</li>
-              <li><strong>Length of minor roads in 400m buffer:</strong> expected positive effect</li>
-              <li><strong>Number of Baywheels stations in 800m buffer:</strong> expected positive effect</li>
-              <li><strong>Length of bicycle facility in 800m buffer:</strong> expected positive effect</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+    <!-- 2b. Station Typology -->
+    <li>
+      <h4>Station Typology</h4>
+      <ul>
+        <li>
+          <p>
+            In order to make our observations of ridership patterns more meaningful, we first develop
+            a bikeshare station typology to group stations with similar built environment characteristics
+            together. This typology is based on Steven R. Gehrke and Timothy F. Welch's "A bikeshare
+            station area typology to forecast the station-level ridership of system expansion" (2019),
+            in which they use five built environment variables to classify existing bikeshare station
+            areas in Washington D.C. Of the five variables, we used three in our analysis:
+          </p>
+          <ul>
+            <li><strong>Activity:</strong> Number of persons and jobs</li>
+            <li><strong>Employment-population balance:</strong> Ratio of jobs to persons</li>
+            <li><strong>Distance (miles) to nearest rail station</strong></li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            The two variables from the paper that were not included in our analysis are beta index
+            (the ratio of street links to intersection nodes) and distance to nearest park. Across
+            the existing literature, the first three variables are much more often cited for their
+            influence on ridership compared to the latter two. For this reason, given time constraints
+            and difficulty acquiring the necessary data, these variables were excluded in our analysis.
+          </p>
+        </li>
+        <li>
+          <p>Two other key differences in our approach:</p>
+          <ul>
+            <li>
+              Instead of forming a grid and classifying each area of the grid, we classify each station
+              directly since we are not attempting to predict ridership of a future station based on
+              its location.
+            </li>
+            <li>
+              The paper uses Latent Class Cluster Analysis (LCCA). In Python, the closest equivalent
+              is Gaussian Mixture Model (GMM), via sklearn, which is model-based and probabilistic
+              like LCCA.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>Clustering approach:</p>
+          <ul>
+            <li>
+              The optimal number of clusters was selected by fitting GMMs for k=2 through k=8 and
+              choosing the solution with the lowest Bayesian Information Criterion (BIC), a model
+              selection metric that balances goodness of fit against model complexity, where lower
+              values indicate a better balance. The BIC declined sharply from k=3 (944.7) to k=4
+              (832.8) before rising again, indicating that four clusters best represented the
+              underlying structure of the data.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>
+            Given our clusters, we then performed exploratory analysis of each station cluster against
+            several other factors that have been shown to influence station ridership. Based on the
+            work of Faghih-Imani et al. (2014) on Bixi ridership in Montreal, we explored the effects
+            of several bicycle infrastructure variables on ridership:
+          </p>
+          <ul>
+            <li><strong>Length of major roads in 400m buffer:</strong> expected negative effect</li>
+            <li><strong>Length of minor roads in 400m buffer:</strong> expected positive effect</li>
+            <li><strong>Number of Baywheels stations in 800m buffer:</strong> expected positive effect</li>
+            <li><strong>Length of bicycle facility in 800m buffer:</strong> expected positive effect</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
 
-      <!-- 2c. Opportunity Score and Ridership Effects -->
-      <li>
-        <h4>Opportunity Score and Ridership Effects</h4>
-        <ul>
-          <li>
-            <p>
-              To understand how resource disparities affected bikeshare ridership in Berkeley and Oakland,
-              we first had to bound opportunity score data from the California Tax Credit Allocation
-              Committee to these two geographies. This was accomplished through a dissolve technique in
-              Python to spatially join parquet files into a unified boundary layer downloaded from the
-              Alameda County Open Data Portal and United States Census Bureau. The California Tax Credit
-              Allocation Committee (TCAC) data was then bound to the Berkeley/Oakland dissolved layer to
-              display opportunity scores, opportunity categories, and racial demographics at a census
-              tract level between the two cities.
-            </p>
-          </li>
-          <li>
-            <p>
-              Next, Lyft Baywheels data over a six year period (2020–2025) was cleaned and organized for
-              geospatial accuracy and data relevance to display ridership trends by census tract opportunity
-              score. Station locations were used to convert station ridership data into a geodataframe.
-              Because this analysis required total ridership by station counts by study year, station
-              locations had to be averaged to get consistent station locations across the study period.
-              Because of the variety of XY coordinates for a single station, an averaging calculation was
-              used in the code to apply the average coordinate across a single station for all six years
-              for locational accuracy. To have a consistent ridership metric, only station origin trips
-              were used in the visualization of data to understand where people were starting their trips
-              and in which census tract opportunity score they originated from.
-            </p>
-          </li>
-          <li>
-            <p>
-              Finally, Lyft Baywheels data was spatially joined to the dissolved Berkeley/Oakland layer
-              to visualize data on a folium-based Python map and for interactive line and dot charts to
-              understand the connection between opportunity scores and bikeshare ridership.
-            </p>
-            <ul>
-              <li>
-                <strong>% of People of Color:</strong>
-                Each census tract has a % POC pop-up. This percentage is a simple addition equation of
-                all non-white population percentages in a census tract. This is used to understand how
-                formal and informal racially discriminatory policies have shaped the two geographies and
-                aid in the understanding of race-based mobility access.
-              </li>
-              <li>
-                <strong>Opportunity Score:</strong>
-                TCAC opportunity scores are calculated based on eight key indicators — above 200% of
-                poverty level, adult education (bachelor's degree), employment, median home value, math
-                and reading proficiency, high school graduation rates, and student poverty rates. A point
-                is assigned to the opportunity score for every indicator that falls above the regional
-                median.
-              </li>
-              <li>
-                <strong>Opportunity Category:</strong>
-                TCAC opportunity categories identify neighborhoods whose characteristics are strongly
-                associated with positive economic, educational, and health outcomes. Census tracts are
-                ranked based on 21 indicators divided into categories: Highest Resource, High Resource,
-                Moderate Resource, and Low Resource in a 20% bin threshold.
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-
-    </ul>
-  </li>
-</ol>
+    <!-- 2c. Opportunity Score and Ridership Effects -->
+    <li>
+      <h4>Opportunity Score and Ridership Effects</h4>
+      <ul>
+        <li>
+          <p>
+            To understand how resource disparities affected bikeshare ridership in Berkeley and Oakland,
+            we first had to bound opportunity score data from the California Tax Credit Allocation
+            Committee to these two geographies. This was accomplished through a dissolve technique in
+            Python to spatially join parquet files into a unified boundary layer downloaded from the
+            Alameda County Open Data Portal and United States Census Bureau. The California Tax Credit
+            Allocation Committee (TCAC) data was then bound to the Berkeley/Oakland dissolved layer to
+            display opportunity scores, opportunity categories, and racial demographics at a census
+            tract level between the two cities.
+          </p>
+        </li>
+        <li>
+          <p>
+            Next, Lyft Baywheels data over a six year period (2020–2025) was cleaned and organized for
+            geospatial accuracy and data relevance to display ridership trends by census tract opportunity
+            score. Station locations were used to convert station ridership data into a geodataframe.
+            Because this analysis required total ridership by station counts by study year, station
+            locations had to be averaged to get consistent station locations across the study period.
+            Because of the variety of XY coordinates for a single station, an averaging calculation was
+            used in the code to apply the average coordinate across a single station for all six years
+            for locational accuracy. To have a consistent ridership metric, only station origin trips
+            were used in the visualization of data to understand where people were starting their trips
+            and in which census tract opportunity score they originated from.
+          </p>
+        </li>
+        <li>
+          <p>
+            Finally, Lyft Baywheels data was spatially joined to the dissolved Berkeley/Oakland layer
+            to visualize data on a folium-based Python map and for interactive line and dot charts to
+            understand the connection between opportunity scores and bikeshare ridership.
+          </p>
+          <ul>
+            <li>
+              <strong>% of People of Color:</strong>
+              Each census tract has a % POC pop-up. This percentage is a simple addition equation of
+              all non-white population percentages in a census tract. This is used to understand how
+              formal and informal racially discriminatory policies have shaped the two geographies and
+              aid in the understanding of race-based mobility access.
+            </li>
+            <li>
+              <strong>Opportunity Score:</strong>
+              TCAC opportunity scores are calculated based on eight key indicators — above 200% of
+              poverty level, adult education (bachelor's degree), employment, median home value, math
+              and reading proficiency, high school graduation rates, and student poverty rates. A point
+              is assigned to the opportunity score for every indicator that falls above the regional
+              median.
+            </li>
+            <li>
+              <strong>Opportunity Category:</strong>
+              TCAC opportunity categories identify neighborhoods whose characteristics are strongly
+              associated with positive economic, educational, and health outcomes. Census tracts are
+              ranked based on 21 indicators divided into categories: Highest Resource, High Resource,
+              Moderate Resource, and Low Resource in a 20% bin threshold.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
 
 <!-- ─────────────────────────────────────────
      GREATER RIDERSHIP TRENDS SECTION
 ───────────────────────────────────────── -->
-<h1>Greater Ridership Trends</h1>
+<h1>Results & Visual Story</h1>
+<h3>Greater Ridership Trends</h3>
 <div id="map" style="height: 600px;"></div>
 <label style="padding-top: 20px" for="yearSlider">Year</label>
 <div class="slider-container">
@@ -384,7 +378,7 @@ As for our approach with infrastructure and built environment effects, we isolat
 <!-- ─────────────────────────────────────────
      BUILT ENVIRONMENT EFFECTS SECTION
 ───────────────────────────────────────── -->
-<h1>Built Environment Effects: Observations Across Station Types </h1>
+<h3>Built Environment Effects: Observations Across Station Types </h3>
 <h4>Baywheels Station Typology</h4>
 <div id="map2" style="height: 500px; margin-top: 20px;"></div>
 <table style="border-collapse: collapse; width: 100%; font-size: 13px; table-layout: fixed; margin-top: 20px">
@@ -394,7 +388,7 @@ As for our approach with infrastructure and built environment effects, we isolat
       <th style="padding: 10px; border: 1px solid #ddd; text-align: left; width: 18%;">Type</th>
       <th style="padding: 10px; border: 1px solid #ddd; text-align: right; width: 8%;">Stations</th>
       <th style="padding: 10px; border: 1px solid #ddd; text-align: right; width: 12%;">Avg. Activity</th>
-      <th style="padding: 10px; border: 1px solid #ddd; text-align: right; width: 14%;">Jobs/ Residents</th>
+      <th style="padding: 10px; border: 1px solid #ddd; text-align: right; width: 14%;">Emp.-Pop. Balance</th>
       <th style="padding: 10px; border: 1px solid #ddd; text-align: right; width: 12%;">Dist. to BART</th>
       <th style="padding: 10px; border: 1px solid #ddd; text-align: left; width: 28%;">Description</th>
     </tr>
@@ -438,8 +432,10 @@ As for our approach with infrastructure and built environment effects, we isolat
     </tr>
   </tbody>
 </table>
+<p>
+Bikeshare stations vary drastically in terms of their social and built environment contexts, given a wide range in population, retail, and employment density, a diversity of building, road, intersection types, and variable pedestrian and bicycle facility and quality surrounding stations. Given this, it is helpful to develop a station typology to group similar stations together and make observations both within and across groups to understand how different types of bike stations perform and why. Below we explain the built environment variables we used to characterize different station types as well as the reasons for selecting them.
+</p>
 <div style="margin-top: 20px; font-size: 13px; line-height: 1.8; color: #444;">
-  <h4 style="margin-bottom: 8px;">Variable Definitions</h4>
   <p><strong>Activity</strong> — The total number of residents and jobs within a half-mile buffer of each station, drawn from the 2022 American Community Survey (ACS) and LEHD Origin-Destination Employment Statistics (LODES). This measure captures the overall intensity of land use surrounding a station and is a strong predictor of bikeshare demand (Faghih-Imani et al., 2014; Rixey, 2013).</p>
   <p><strong>Employment-Population Balance</strong> — The ratio of jobs to residents within the station area buffer. Values greater than 1 indicate employment-dominated contexts; values less than 1 indicate residential dominance. This measure distinguishes commercial and mixed-use station areas from purely residential ones (Gehrke & Welch, 2019).</p>
   <p><strong>Distance to Nearest Rail Station</strong> — The straight-line distance in miles from each bikeshare station to the nearest BART station. Proximity to rail has been consistently associated with higher bikeshare ridership, reflecting the role of bikeshare as a first- and last-mile solution to fixed-route transit (Shaheen et al., 2010; El-Assi et al., 2017).</p>
@@ -447,8 +443,8 @@ As for our approach with infrastructure and built environment effects, we isolat
 <p>
   Classifying similar stations together allows us to do two things:
   <ol>
-    <li>Visualize and compare ridership across station types, seeing which built environment variables have the greatest impact on ridership.</li>
-    <li>Introduce other variables to see their effects on ridership within one station type, to see the effects of that variable on ridership holding the other variables somewhat more constant/similar.</li>
+    <li>Visualize and compare ridership <b>across</b> station types, seeing which built environment variables have the greatest impact on ridership.</li>
+    <li>Introduce other variables to see their effects on ridership <b>within</b> one station type, to see the effects of that variable on ridership holding the other variables somewhat more constant/similar.</li>
   </ol>
 </p>
 <p>
@@ -474,7 +470,7 @@ We can use the visualization below to observe the individual effects of the diff
 <div id="scatterplot" style="width: 100%; height: 400px;"></div>
 <h4>Policy Implications</h4>
 <p>
-  Creating a station typology for bikeshare in the Bay Area has significant policy implications for regional transportation planning. It will allow transportation planners to understand underlying factors that make an effective station, and enable them to make informed decisions on not only station placement, but also road and street improvements to improve the bikeshare rider’s experience, as well as prioritization of pedestrian and bicycle facility development. Moreover, solutions can be tailored to station type, with the understanding that not all solutions apply to all station types.
+  Creating a station typology for bikeshare in the Bay Area has significant policy implications for regional transportation planning. As a tool it will enable transportation planners to make more informed and tailored decisions regarding bikeshare planning in relation to the greater city context. Characterizing the underlying built environment can help planners predict better station placement, critical road and street improvements to improve safety and access, and essential pedestrian and bicycle facility development. It is the first step to understanding what makes an effective bike station. Instead of an overwhleming array of individual stations each with their own contexts and outcomes, classifying stations will allow patterns to emerge as to what solutions best serve each station type, with the understanding that tailored solutions can better improve equity outcomes.
 </p>
 <div id="barchart" style="width: 100%; height: 400px;"></div>
 <div style="margin: 10px 0px 80px 0px;">
@@ -499,10 +495,10 @@ By grouping ridership by station type, we can see that stations that fall under 
 <p>
 We performed analysis for an array for bicycle facility variables including:
 <ul>
-<li>Length of major roads in 400m buffer: expected negative effect</li>
-<li>Length of minor roads in 400m buffer: expected positive effect</li>
-<li>Number of Baywheels stations in 800m buffer: expected positive effect</li>
-<li>Length of bicycle facility in 800m buffer: expected positive effect</li>
+<li><b>Length of major roads in 400m buffer</b>: expected negative effect</li>
+<li><b>Length of minor roads in 400m buffer</b>: expected positive effect</li>
+<li><b>Number of Baywheels stations in 800m buffer</b>: expected positive effect</li>
+<li><b>Length of bicycle facility in 800m buffer</b>: expected positive effect</li>
 </ul>
 </p>
 <p>
@@ -535,7 +531,7 @@ To demonstrate our two research paths converging, below is a visual comparison o
 <!-- ─────────────────────────────────────────
      RESOURCE DISPARITY EFFECTS SECTION
 ───────────────────────────────────────── -->
-<h1>Neighborhood Resource Disparity Effects on Bikeshare Ridership</h1>
+<h3>Neighborhood Resource Disparity Effects on Bikeshare Ridership</h3>
 <p>
 Mobility access is heavily influenced by personal characteristics such as race and income (Dill et al. 2022). Historical exclusionary policies, such as redlining and urban renewal, have dramatically impacted who can – and cannot – access transportation across public and private modes of transportation (Dill et al. 2022). For these reasons, we use race and income – in conjunction with TCAC derived opportunity score – to understand how Lyft’s Baywheels ridership is affected across geographies. While our analysis is not robust enough to determine correlation and causality between Baywheels stations siting, ridership, and inequitable mobility distribution, unequal mobility patterns persist in bikeshare adoption in lower-resource areas compared to moderate-, high-, and highest-resource census tracts across both Berkeley and Oakland. 
 <h4>Lyft Bike Ridership By TCAC Opportunity Score</h4>

@@ -1,3 +1,7 @@
+h1 {
+  font-weight: 700;
+}
+
 label {
   font-weight: 500;
   display: block;
@@ -72,10 +76,6 @@ label {
   flex-direction: col-reverse;
 }
 
-
-ol li::marker {
-  font-size: 1.5rem;
-}
 
 .station-feature {
     display: flex;
